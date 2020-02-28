@@ -65,8 +65,6 @@ public class Number {
                 }
                 p = romanValue;
             }
-
-            //value = 777;
             isRoman = true;
         }
 
