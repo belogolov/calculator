@@ -9,7 +9,6 @@ class Calc {
         this.a = a;
         this.b = b;
         this.operation = operation;
-
     }
 
 
