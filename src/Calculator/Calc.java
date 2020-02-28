@@ -13,6 +13,7 @@ public class Calc {
 
 
     public void calculate() {
+
         if (operation.equals("+")) {
             plus();
         } else if (operation.equals("-")) {
