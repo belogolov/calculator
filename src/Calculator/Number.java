@@ -1,31 +1,31 @@
 package Calculator;
 
-public class Number {
+class Number {
 
     private enum TypeOfNumber {
-        NOT_NUMBER, ARAB, ROMAN;
+        NOT_NUMBER, ARAB, ROMAN
     }
 
     private TypeOfNumber type;
     private String inputString;
     private int value;
 
-    public Number(String inputString) {
-        this.inputString = inputString.replaceAll(" ", "");;
+    Number(String inputString) {
+        this.inputString = inputString.replaceAll(" ", "");
         type = TypeOfNumber.NOT_NUMBER;
         value = 0;
         getValueFromString();
     }
 
-    public boolean isNumber() {
+    boolean isNumber() {
         return type != TypeOfNumber.NOT_NUMBER;
     }
 
-    public TypeOfNumber getType() {
+    TypeOfNumber getType() {
         return type;
     }
 
-    public int getValue() {
+    int getValue() {
         return value;
     }
 

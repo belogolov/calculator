@@ -1,18 +1,18 @@
 package Calculator;
 
-public class Calc {
+class Calc {
     private int a;
     private int b;
     private String operation;
 
-    public Calc(int a, int b, String operation) {
+    Calc(int a, int b, String operation) {
         this.a = a;
         this.b = b;
         this.operation = operation;
     }
 
 
-    public void calculate() {
+    void calculate() {
 
         if (operation.equals("+")) {
             plus();

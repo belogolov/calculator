@@ -71,7 +71,6 @@ public class CalcApp {
         System.out.print("Input: ");
         InputStreamReader isr = new InputStreamReader(System.in);
         BufferedReader br = new BufferedReader(isr);
-        String s = br.readLine();
-        return s;
+        return br.readLine();
     }
 }
