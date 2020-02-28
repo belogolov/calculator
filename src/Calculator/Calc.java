@@ -13,17 +13,22 @@ class Calc {
 
 
     void calculate() {
-
-        if (operation.equals("+")) {
-            plus();
-        } else if (operation.equals("-")) {
-            minus();
-        } else if (operation.equals("*")) {
-            multiply();
-        } else if (operation.equals("/")) {
-            div();
-        } else {
-            System.out.println("Операция не определена");
+        switch (operation) {
+            case "+":
+                plus();
+                break;
+            case "-":
+                minus();
+                break;
+            case "*":
+                multiply();
+                break;
+            case "/":
+                div();
+                break;
+            default:
+                System.out.println("Операция не определена");
+                break;
         }
     }
 
