@@ -105,7 +105,7 @@ class Number {
     }
 
     private String convertFromArabToRoman() {
-        IntegerConverter converter = new IntegerConverter();
+        //IntegerConverter converter = new IntegerConverter();
         return IntegerConverter.intToRoman(value);
     }
 
