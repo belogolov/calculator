@@ -64,7 +64,7 @@ class Number {
         boolean isRoman = false;
         String str = inputString.toUpperCase();
         outputString = inputString;
-        if (str.matches("M*(C[MD]|D?C{0,3})(X[CL]|L?X{0,3})(I[XV]|V?I{0,3})")) {
+        if (str.matches("^(M{0,3})(C[MD]|D?C{0,3})(X[CL]|L?X{0,3})(I[XV]|V?I{0,3})$")) {
             type = TypeOfNumber.ROMAN;
             int p = 0;
             int romanValue = 0;
