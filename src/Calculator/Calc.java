@@ -4,15 +4,17 @@ class Calc {
     private int a;
     private int b;
     private String operation;
+    private String resultStr;
 
     Calc(int a, int b, String operation) {
         this.a = a;
         this.b = b;
         this.operation = operation;
+        resultStr = "";
     }
 
 
-    void calculate() {
+    private void calculate() {
         switch (operation) {
             case "+":
                 plus();
@@ -32,26 +34,35 @@ class Calc {
         }
     }
 
+    String getResult() {
+        calculate();
+        return resultStr;
+    }
+
     private void plus() {
-        int result = a + b;
-        System.out.println(result);
+        //int result = a + b;
+        //System.out.println(result);
+        resultStr = Integer.toString(a + b);
     }
 
     private void minus() {
-        int result = a - b;
-        System.out.println(result);
+//        int result = a - b;
+//        System.out.println(result);
+        resultStr = Integer.toString(a - b);
     }
 
     private void multiply() {
-        int result = a * b;
-        System.out.println(result);
+//        int result = a * b;
+//        System.out.println(result);
+        resultStr = Integer.toString(a * b);
     }
 
     private void div() {
-        double result = (double) a / (double) b;
+        //double result = (double) a / (double) b;
 //        if (b == 0) {
 //            System.out.println("Деление на 0");
 //        }
-        System.out.println(result);
+        //System.out.println(result);
+        resultStr = Double.toString((double) a / (double) b);
     }
 }

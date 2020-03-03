@@ -2,12 +2,13 @@ package Calculator;
 
 class Number {
 
-    private enum TypeOfNumber {
+    enum TypeOfNumber {
         NOT_NUMBER, ARAB, ROMAN
     }
 
     private TypeOfNumber type;
     private String inputString;
+    private String outputString;
     private int value;
 
     Number(String inputString) {
@@ -15,6 +16,17 @@ class Number {
         type = TypeOfNumber.NOT_NUMBER;
         value = 0;
         getValueFromString();
+    }
+
+    Number(int value, TypeOfNumber type) {
+        this.value = value;
+        this.type = type;
+        inputString = String.valueOf(value);
+        if (type == TypeOfNumber.ROMAN) {
+            outputString = convertFromArabToRoman();
+        } else {
+            outputString = inputString;
+        }
     }
 
     boolean isNumber() {
@@ -29,7 +41,6 @@ class Number {
         return value;
     }
 
-
     private void getValueFromString() {
         if (!convertToArabNumber()) {
             convertToRomanNumber();
@@ -41,6 +52,7 @@ class Number {
         try {
             value = Integer.parseInt(inputString);
             type = TypeOfNumber.ARAB;
+            outputString = String.valueOf(value);
             isArab = true;
         } catch (NumberFormatException e) {
             //e.printStackTrace();
@@ -51,7 +63,7 @@ class Number {
     private boolean convertToRomanNumber()  {
         boolean isRoman = false;
         String str = inputString.toUpperCase();
-
+        outputString = inputString;
         if (str.matches("M*(C[MD]|D?C{0,3})(X[CL]|L?X{0,3})(I[XV]|V?I{0,3})")) {
             type = TypeOfNumber.ROMAN;
             int p = 0;
@@ -92,8 +104,14 @@ class Number {
         }
     }
 
+    private String convertFromArabToRoman() {
+        IntegerConverter converter = new IntegerConverter();
+        return IntegerConverter.intToRoman(value);
+    }
+
     @Override
     public String toString() {
-        return inputString;
+        //return inputString;
+        return outputString;
     }
 }
