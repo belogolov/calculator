@@ -26,7 +26,15 @@ public class CalcApp {
 
                 if (isCorrect(aNum, bNum)) {
                     Calc calc = new Calc(aNum.getValue(), bNum.getValue(), opStr);
-                    calc.calculate();
+                    String result = calc.getResult();
+                    if (aNum.getType() == Number.TypeOfNumber.ARAB) {
+                        System.out.println(result);
+                    } else {
+                        //Number resNum = new Number(Integer.parseInt(result), aNum.getType());
+                        Number resNum = new Number((int) Double.parseDouble(result), aNum.getType());
+                        System.out.println(resNum.toString() + " (" + result + ")");
+                    }
+
                 } else {
                     break;
                 }
